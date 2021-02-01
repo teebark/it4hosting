@@ -7,6 +7,10 @@
  Template:     generatepress
  Version:      0.1
 */
+/* Assign color variables */
+:root {
+	--dark-blue: #0069b5;
+}
 /* Get rid of space between navbar and hero image */
 .home #main {
 	margin-top: 0;
