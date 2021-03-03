@@ -11,6 +11,10 @@
 :root {
 	--dark-blue: #0069b5;
 }
+/* Top bar image height for guidestar */
+.top-bar img {
+	height: 60px;
+}
 /* Get rid of space between navbar and hero image */
 .home #main {
 	margin-top: 0;
@@ -18,6 +22,10 @@
 .home .inside-article,
 .home .wp-block-group__inner-container {
 	padding-top: 0;
+}
+/* Hero title alignment */
+.home .wp-block-cover.alignfull {
+	justify-content: center;
 }
 p.hero-title {
 	font-size: 2rem;
@@ -35,9 +43,26 @@ p.hero-title {
 .home .wp-block-cover__inner-container p {
 	margin-bottom: 0;
 }
+/* Guidestar block background */
+.home .guidestar {
+	background: #f2f2f2;
+	padding-top: 10px;
+}
+/* Control size of gallery items */
+.home .wp-block-gallery.resize ul.blocks-gallery-grid > * {
+	max-width: 100px;
+}
+.home .wp-block-gallery.resize {
+	justify-content: center;
+}
+.home ul.blocks-gallery-grid {
+	align-items: center;
+}
+/* .home .wp-block-gallery {
+	max-width: 600px;
+} */
 /* Format button Get Involved */
 .home .get-involved .wp-block-buttons {
-	
 	font-size: 18px;
 	font-weight: 600;
 	color: white;
@@ -53,6 +78,10 @@ p.hero-title {
 /* Center key stats cards */
 .home .wp-block-columns {
 	justify-content: center;
+}
+/* Height key stats cards */
+.home .wp-show-posts {
+	height: 10rem;
 }
 /* Center align circumstances list */
 .home ul.circumstances-list {
@@ -103,7 +132,13 @@ p.hero-title {
 	margin: 5px 0 0 0;
 	background-color: #0069b5;
 }
-/* Decrease item spacing in mobile hamburger drop downs */
+@media (min-width: 1025px) {
+/* Shift navbar to right on desktop ----------------------------------------------------------------------- */
+#site-navigation .navigation-branding {
+	margin-right: 100px;
+	}
+}
+/* Decrease item spacing in mobile hamburger drop downs --------------------------------------------------- */
 @media (max-width: 768px) {
 .main-navigation .main-nav ul li a {
 	line-height: 30px;
