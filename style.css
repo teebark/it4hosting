@@ -9,7 +9,12 @@
 */
 /* Assign color variables */
 :root {
-	--dark-blue: #0069b5;
+	--blue:       #4066c8;
+	--dark-blue:  #20124c;
+	--gold:       #f3b71c;
+	--light-gold: #e9cf3a;
+	--gray:       #efefef;
+	--light-gray: #f2f2f2;
 }
 /* Top bar image height for guidestar */
 .top-bar img {
@@ -19,6 +24,22 @@
 .home #main {
 	margin-top: 0;
 }
+#menu-main {
+	background: white;
+}
+/* Search bar width */
+.navigation-search {
+	width: 25vw;
+	margin-left: 50vw;
+	background-color: var(--light-gray,lightgray);
+}
+.navigation-search input[type="search"],
+.navigation-search input[type="search"]:focus,
+.navigation-search input[type="search"]:active {
+	background-color: var(--light-gray,lightgray);
+	/* opacity: 0; */
+	color: black;
+}
 .home .inside-article,
 .home .wp-block-group__inner-container {
 	padding-top: 0;
@@ -27,26 +48,63 @@
 .home .wp-block-cover.alignfull {
 	justify-content: center;
 }
-p.hero-title {
+h1.hero-title,
+h1.services-title,
+h1.volunteer-title {
 	font-size: 2rem;
 	font-weight: 900;
 	color: white;
-	text-shadow: 1px 1px 0 black;
+	/* text-shadow: 1px 1px 0 black; */
 	display: table-cell;
 }
+h2 {
+	padding-top .5rem;
+	margin-bottom: 0;
+}
+h2 {
+	padding-top .5rem;
+	margin-bottom: 0;
+	padding-bottom: 1rem;
+	background: var(--light-gray,lightgray);
+}
+/* Turn off the gray background for these pages */
+.search h2,
+.blog h2 {
+	background: transparent;
+	padding-bottom: 0;
+}
+.search .entry-summary {
+	margin-top: 0;
+}
+h3 {
+	margin-top: 1rem;
+	margin-bottom: 0;
+}
+h3:first-child {
+	margin-top: 0;
+}
+.wp-block-columns,
+ul {
+	background: var(--light-gray,lightsteelblue);
+}
 /* Line up hero title, button */
-.home .wp-block-cover__inner-container {
+.home .wp-block-cover__inner-container,
+.services .wp-block-cover__inner-container,
+.volunteer .wp-block-cover__inner-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-.home .wp-block-cover__inner-container p {
+.home .wp-block-cover__inner-container h1 {
 	margin-bottom: 0;
 }
-/* Guidestar block background */
-.home .guidestar {
-	background: #f2f2f2;
-	padding-top: 10px;
+.services .wp-block-cover__inner-container h1,
+.volunteer .wp-block-cover__inner-container h1 {
+	margin-top: 40%;
+}
+/* Center key stats cards */
+.home .wp-block-columns {
+	justify-content: center;
 }
 /* Control size of gallery items */
 .home .wp-block-gallery.resize ul.blocks-gallery-grid > * {
@@ -61,27 +119,27 @@ p.hero-title {
 /* .home .wp-block-gallery {
 	max-width: 600px;
 } */
-/* Format button Get Involved */
-.home .get-involved .wp-block-buttons {
+/* Center buttons */
+.home .wp-block-buttons,
+.volunteer .wp-block-buttons {
 	font-size: 18px;
 	font-weight: 600;
 	color: white;
 	padding: 5px 10px 5px 10px;
 	/* background-color: #2e3b7d; */
-	border-radius: 8px;
+	/* border-radius: 8px; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
-/* Button color */
-.home .get-involved a.wp-block-button__link {
+/* Format cover button */
+.home .volunteer a.wp-block-button__link,
+.home .get-started a.wp-block-button__link,
+.services .talk-to-us a.wp-block-button__link,
+.volunteer .get-involved a.wp-block-button__link {
 	margin-top: 10px;
-	background-color: #0069b5;
-}
-/* Center key stats cards */
-.home .wp-block-columns {
-	justify-content: center;
-}
-/* Height key stats cards */
-.home .wp-show-posts {
-	height: 10rem;
+	background-color: var(--blue,blue);
+	border-radius: 1rem;
 }
 /* Center align circumstances list */
 .home ul.circumstances-list {
@@ -89,23 +147,15 @@ p.hero-title {
 	flex-direction: column;
 	align-items: center;
 }
-/* Format button Get Started */
-.home .wp-block-button.get-started  {
+/* Format buttons on page */
+.home .wp-block-button  {
 	display: flex;
 	justify-content: center;
 }
-.home .get-started .wp-block-buttons {
-	font-size: 18px;
-	font-weight: 600;
-	color: white;
-	padding: 5px 10px 5px 10px;
-	/* background-color: #2e3b7d; */
-	border-radius: 8px;
-}
-/* Button color */
-.home .get-started a.wp-block-button__link {
-	margin: 5px 0 0 0;
-	background-color: #0069b5;
+
+/* Button background */
+ul + div[class="wp-block-buttons"] {
+	background: var(--light-gray,lightgray);
 }
 /* Center align expect list */
 .home ul.expect-list {
@@ -128,14 +178,61 @@ p.hero-title {
 	border-radius: 8px;
 }
 /* Button color */
+/*
 .home .all-services a.wp-block-button__link {
 	margin: 5px 0 0 0;
-	background-color: #0069b5;
+	background-color: var(--blue,blue);
+}*/
+
+/* Footer settings */
+#footer-widgets {
+	background: #3a3a3a;
+}
+#footer-widgets .footer-address h2,
+#footer-widgets .footer-social h2,
+#footer-widgets .footer-blog h2 {
+	color: white;
+	text-align: center;
+	background: transparent;
+}
+#footer-widgets .lsi-social-icons {
+	background: transparent;
+}
+#footer-widgets .footer-address p {
+	color: white;
+	line-height: 0;
+}
+#footer-widgets .footer-social ul[style] {
+	text-align: center !important;
+}
+#footer-widgets .footer-blog p {
+	color: white;
+}
+hr.wp-block-separator {
+	margin-bottom: 1.5rem;
+	background: transparent;
 }
 @media (min-width: 1025px) {
 /* Shift navbar to right on desktop ----------------------------------------------------------------------- */
 #site-navigation .navigation-branding {
 	margin-right: 100px;
+	}
+/* Height key stats */
+.home .wp-show-posts {
+	height: 15rem;
+	}
+ul {
+	margin:0;
+}
+/* Indent lists */
+ul.list-indent,
+ol.list-indent {
+	padding: 0 15rem 0 15rem;
+	}
+/* Indent lists, no decoration  */
+ul.list-indent-plain {
+	padding: 0 15rem 0 15rem;
+	list-style: none;
 	}
 }
 /* Decrease item spacing in mobile hamburger drop downs --------------------------------------------------- */
