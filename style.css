@@ -16,6 +16,72 @@
 	--gray:       #efefef;
 	--light-gray: #f2f2f2;
 }
+/* Gutenberg color palette */
+.has-blue-color {
+	color: #4066c8;
+}
+.has-blue-background-color {
+	background-color: #4066c8;
+}
+.has-darkblue-color {
+	color: #20124c;
+}
+.has-darkblue-background-color {
+	background-color: #20124c;
+}
+.has-gold-color {
+	color: #f3b71c;
+}
+.has-gold-background-color {
+	background-color: #f3b71c;
+}
+.has-lightgold-color {
+	color: #e9cf3a;
+}
+.has-lightgold-background-color {
+	background-color: #e9cf3a;
+}
+.has-gray-color {
+	color: #efefef;
+}
+.has-gray-background-color {
+	background-color: #efefef;
+}
+.has-lightgray-color {
+	color: #f2f2f2;
+}
+.has-lightgray-background-color {
+	background-color: #f2f2f2;
+}
+.has-black-color {
+	color: #000000;
+}
+.has-black-background-color {
+	background-color: #000000;
+}
+.has-white-color {
+	color: #ffffff;
+}
+.has-white-background-color {
+	background-color: #ffffff;
+}
+/* Override theme adding h2 and h3 css whenever a background is added */
+h2,
+h2.has-background {
+	padding-top: .5rem !important;
+	padding-bottom: .5rem !important;
+	margin-bottom: 0 !important;
+}
+h3,
+h3.has-background {
+	padding-top: 1rem !important;
+	padding-bottom: .5rem !important;
+	margin-bottom: 0 !important;
+}
+h3:first-child,
+h3.has-background:first-child {
+	padding-top: 0 !important;
+}
 /* Top bar image height for guidestar */
 .top-bar img {
 	height: 60px;
@@ -57,35 +123,33 @@ h1.volunteer-title {
 	/* text-shadow: 1px 1px 0 black; */
 	display: table-cell;
 }
-h2 {
-	padding-top .5rem;
-	margin-bottom: 0;
-}
-h2 {
-	padding-top .5rem;
-	margin-bottom: 0;
-	padding-bottom: 1rem;
-	background: var(--light-gray,lightgray);
-}
 /* Turn off the gray background for these pages */
 .search h2,
 .blog h2 {
-	background: transparent;
+	/* background: transparent; */
 	padding-bottom: 0;
 }
 .search .entry-summary {
 	margin-top: 0;
 }
-h3 {
-	margin-top: 1rem;
-	margin-bottom: 0;
+/* Highlight Tech Problems header */
+h2.tech-problems {
+	font-size: 2.5rem;
+	text-shadow: 1px 1px 0 black;
+	background: transparent;
+	color: var(--blue,blue);
 }
-h3:first-child {
-	margin-top: 0;
-}
+/*
 .wp-block-columns,
 ul {
-	background: var(--light-gray,lightsteelblue);
+	background: var(--light-gray,lightgray);
+}
+*/
+/* Add space at bottom of content */
+.wp-block-column:last-child,
+ul.list-indent li:last-child:only-child {
+	padding-bottom: 1rem;
+	/* background: var(--light-gray,lightgray); */
 }
 /* Line up hero title, button */
 .home .wp-block-cover__inner-container,
@@ -152,7 +216,6 @@ ul {
 	display: flex;
 	justify-content: center;
 }
-
 /* Button background */
 ul + div[class="wp-block-buttons"] {
 	background: var(--light-gray,lightgray);
@@ -176,6 +239,11 @@ ul + div[class="wp-block-buttons"] {
 	padding: 5px 10px 5px 10px;
 	/* background-color: #2e3b7d; */
 	border-radius: 8px;
+}
+/* Format blog section */
+.wp-show-posts article .wp-show-posts-inner {
+	border: var(--light-gray,lightgray) solid 4px;
+	padding: 1rem;
 }
 /* Button color */
 /*
@@ -218,9 +286,7 @@ hr.wp-block-separator {
 	margin-right: 100px;
 	}
 /* Height key stats */
-.home .wp-show-posts {
-	height: 15rem;
-	}
+
 ul {
 	margin:0;
 }
@@ -228,6 +294,11 @@ ul {
 ul.list-indent,
 ol.list-indent {
 	padding: 0 15rem 0 15rem;
+	}
+/* Add spacing to bottom */
+ul.list-indent:last-child:only-child,
+ol.list-indent:last-child:only-child {
+	margin-bottom: 1rem;
 	}
 /* Indent lists, no decoration  */
 ul.list-indent-plain {
