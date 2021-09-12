@@ -109,7 +109,18 @@ h3.has-background:first-child {
 .home .wp-block-cover.alignfull {
 	justify-content: center;
 }
-h1.hero-title,
+/* Change color of home title and blur background */
+h1.hero-title {
+	color: var(--dark-blue,blue);
+	background: rgba(255,255,255,0.5);
+	box-shadow: 4px 4px 4px rgb(255 255 255 / 30%), -4px -4px 4px rgb(255 255 255 / 30%);
+	/* text-shadow: 0 0 3px white; */
+	/* backdrop-filter: blur(5px) brightness(1.5) opacity(.2); */
+}
+.home .wp-block-buttons {
+	flex-direction: row !important;
+	justify-content: center !important;
+}
 h1.services-title,
 h1.volunteer-title {
 	font-size: 2rem;
@@ -146,7 +157,16 @@ ul.list-indent li:last-child:only-child {
 	padding-bottom: 1rem;
 	/* background: var(--light-gray,lightgray); */
 }
+/* Set the cover image for relative positioning for the */
+/* following hero titile position                       */
+.home .wp-block-cover {
+	position: relative;
+}
 /* Line up hero title, button */
+.home .wp-block-cover__inner-container {
+	position: absolute;
+	top: 65%;
+}
 .home .wp-block-cover__inner-container,
 .services .wp-block-cover__inner-container,
 .volunteer .wp-block-cover__inner-container {
@@ -260,30 +280,16 @@ ul.list-indent > li {
 	margin: 5px 0 0 0;
 	background-color: var(--blue,blue);
 }*/
-
 /* Footer settings */
 #footer-widgets {
+	color: white;
 	background: #3a3a3a;
-}
-#footer-widgets .footer-address h2,
-#footer-widgets .footer-social h2,
-#footer-widgets .footer-blog h2 {
-	color: white;
-	text-align: center;
-	background: transparent;
-}
-#footer-widgets .lsi-social-icons {
-	background: transparent;
-}
-#footer-widgets .footer-address p {
-	color: white;
 	line-height: 0;
 }
-#footer-widgets .footer-social ul[style] {
-	text-align: center !important;
-}
-#footer-widgets .footer-blog p {
-	color: white;
+#footer-widgets h3 {
+	font-size: 2rem;
+	/* text-align: center; */
+	background: transparent;
 }
 hr.wp-block-separator {
 	margin-bottom: 1.5rem;
@@ -373,7 +379,7 @@ ul.has-background {
 	padding-top: 1rem !important;
 	padding-bottom: .5rem !important;
 	margin-bottom: 0 !important;
-	margin-left: 0 !important;
+	margin-left: 1rem !important;
 	}
 }
 /* Decrease item spacing in mobile hamburger drop downs --------------------------------------------------- */
@@ -381,6 +387,9 @@ ul.has-background {
 .main-navigation .main-nav ul li a {
 	line-height: 30px;
 	}
+h1.hero-title {
+	font-size: 1.2rem;
+}
 ul,
 ul.has-background {
 	padding-top: 1rem !important;
